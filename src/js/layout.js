@@ -1,34 +1,39 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import ScrollToTop from "./component/scrollToTop";
 
-/** Layouts **/
+import EcommercePage from "./views/home";
 
-import LoginLayoutRoute from "./layouts/LoginLayout";
-import DashboardLayoutRoute from "./layouts/DashboardLayout";
+import injectContext from "./store/appContext";
 
-/** Components **/
+import { Navbar } from "./component/navbar";
+import { Footer } from "./component/footer";
 
-import { Home } from "./views/home";
-import { Example } from "./views/example";
-
-/*
-   App
- */
-
-class App extends Component {
+//create your first component
+export class Layout extends React.Component {
 	render() {
+		//the basename is used when your project is published in a subdirectory and not in the root of the domain
+		// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
+		const basename = process.env.BASENAME || "";
+
 		return (
-			<Router>
-				<Switch>
-					<Route exact path="/">
-						<Redirect to="/layout1" />
-					</Route>
-					<LoginLayoutRoute path="/layout1" component={Home} />
-					<DashboardLayoutRoute path="/layout2" component={Home} />
-				</Switch>
-			</Router>
+			<div className="d-flex flex-column h-100">
+				<BrowserRouter basename={basename}>
+					<ScrollToTop>
+						<Navbar />
+						<EcommercePage />
+						<Switch>
+							<Route exact path="/" component={EcommercePage} />
+							<Route path="/demo" component={EcommercePage} />
+							<Route path="/single/:theid" component={EcommercePage} />
+							<Route render={() => <h1>Not found!</h1>} />
+						</Switch>
+						<Footer />
+					</ScrollToTop>
+				</BrowserRouter>
+			</div>
 		);
 	}
 }
 
-export default App;
+export default injectContext(Layout);
