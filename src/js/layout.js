@@ -2,13 +2,13 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import EcommercePage from "./views/home";
+import Carousel from "./views/home";
+import FormsPage from "./views/createAccount";
 
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-
 //create your first component
 export class Layout extends React.Component {
 	render() {
@@ -21,11 +21,9 @@ export class Layout extends React.Component {
 				<BrowserRouter basename={basename}>
 					<ScrollToTop>
 						<Navbar />
-						<EcommercePage />
 						<Switch>
-							<Route exact path="/" component={EcommercePage} />
-							<Route path="/demo" component={EcommercePage} />
-							<Route path="/single/:theid" component={EcommercePage} />
+							<Route exact path="/" component={Carousel} />
+							<Route path="/account" component={FormsPage} />
 							<Route render={() => <h1>Not found!</h1>} />
 						</Switch>
 						<Footer />

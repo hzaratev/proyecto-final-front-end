@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ModalLog from "./modalLog";
 
 export class Navbar extends React.Component {
 	render() {
@@ -12,6 +13,7 @@ export class Navbar extends React.Component {
 					<Link to="/demo">
 						<button className="btn btn-primary">Check the Context in action</button>
 					</Link>
+					<ModalLog />
 				</div>
 			</nav>
 		);
