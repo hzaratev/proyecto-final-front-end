@@ -7,9 +7,12 @@ import FormSignUp from "./views/signUp";
 import TableMyItems from "./views/myItems";
 
 import injectContext from "./store/appContext";
+import FormItem from "./views/itemUpload";
 
-import { Navbar } from "./component/navbar1";
-import { Footer } from "./component/footer";
+import Navbar from "./component/navbar";
+import Footer from "./component/footer";
+import { Sidebar } from "./component/sideBar";
+
 //create your first component
 export class Layout extends React.Component {
 	render() {
@@ -22,10 +25,12 @@ export class Layout extends React.Component {
 				<BrowserRouter basename={basename}>
 					<ScrollToTop>
 						<Navbar />
+						<Sidebar />
 						<Switch>
 							<Route exact path="/" component={Carousel} />
 							<Route path="/signup" component={FormSignUp} />
 							<Route path="/myitems" component={TableMyItems} />
+							<Route path="/itemupload" component={FormItem} />
 							<Route render={() => <h1>Not found!</h1>} />
 						</Switch>
 						<Footer />
