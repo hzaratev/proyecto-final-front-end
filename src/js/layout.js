@@ -6,11 +6,11 @@ import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
+import FormItem from "./views/itemUpload";
 
-import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
+import Navbar from "./component/navbar";
+import Footer from "./component/footer";
 import { Sidebar } from "./component/sideBar";
-import Carousel from "./component/carrusel";
 
 //create your first component
 export class Layout extends React.Component {
@@ -28,10 +28,9 @@ export class Layout extends React.Component {
 						<Switch>
 							<Route exact path="/" component={Home} />
 							<Route path="/demo" component={Demo} />
-							<Route path="/single/:theid" component={Single} />
+							<Route path="/itemupload" component={FormItem} />
 							<Route render={() => <h1>Not found!</h1>} />
 						</Switch>
-						<Carousel />
 						<Footer />
 					</ScrollToTop>
 				</BrowserRouter>
