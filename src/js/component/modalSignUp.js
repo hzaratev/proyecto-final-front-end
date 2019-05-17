@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBInput, MDBModalFooter } from "mdbreact";
 
-class ModalLog extends Component {
+class ModalSignUp extends Component {
 	state = {
-		modal1: false
+		modal2: false
 	};
 
 	toggle = nr => () => {
@@ -17,17 +16,26 @@ class ModalLog extends Component {
 	render() {
 		return (
 			<MDBContainer>
-				<MDBBtn rounded onClick={this.toggle(1)}>
-					Iniciar sesión
+				<MDBBtn rounded onClick={this.toggle(2)}>
+					Registrarse
 				</MDBBtn>
-				<MDBModal isOpen={this.state.modal1} toggle={this.toggle(1)}>
-					<MDBModalHeader className="text-center" titleClass="w-100 font-weight-bold" toggle={this.toggle(1)}>
-						Inicio de sesión
+				<MDBModal isOpen={this.state.modal2} toggle={this.toggle(2)}>
+					<MDBModalHeader className="text-center" titleClass="w-100 font-weight-bold" toggle={this.toggle(2)}>
+						Creación de cuenta
 					</MDBModalHeader>
 					<MDBModalBody>
 						<form className="mx-3 grey-text">
 							<MDBInput
-								label="Correo eletrónico"
+								label="Nombre y apellido"
+								icon="user"
+								group
+								type="text"
+								validate
+								error="wrong"
+								success="right"
+							/>
+							<MDBInput
+								label="Ingresa tu email"
 								icon="envelope"
 								group
 								type="email"
@@ -35,16 +43,13 @@ class ModalLog extends Component {
 								error="wrong"
 								success="right"
 							/>
-							<MDBInput label="Contraseña" icon="lock" group type="password" validate />
+							<MDBInput label="Tu contraseña" icon="lock" group type="password" validate />
 						</form>
 					</MDBModalBody>
 					<MDBModalFooter className="justify-content-center">
-						<MDBBtn onClick={this.toggle(1)}>Entrar</MDBBtn>
-						<br />
-						<div className="createAccount">
-							¿No tienes cuenta?
-							<Link to="./home"> Crea una aquí</Link>
-						</div>
+						<MDBBtn color="deep-orange" onClick={this.toggle(2)}>
+							Registrarme
+						</MDBBtn>
 					</MDBModalFooter>
 				</MDBModal>
 			</MDBContainer>
@@ -52,4 +57,4 @@ class ModalLog extends Component {
 	}
 }
 
-export default ModalLog;
+export default ModalSignUp;
