@@ -16,7 +16,7 @@ class ModalSignUp extends Component {
 	render() {
 		return (
 			<MDBContainer>
-				<MDBBtn rounded onClick={this.toggle(2)}>
+				<MDBBtn rounded color="primary" onClick={this.toggle(2)}>
 					Registrarse
 				</MDBBtn>
 				<MDBModal isOpen={this.state.modal2} toggle={this.toggle(2)}>
@@ -47,7 +47,7 @@ class ModalSignUp extends Component {
 						</form>
 					</MDBModalBody>
 					<MDBModalFooter className="justify-content-center">
-						<MDBBtn color="deep-orange" onClick={this.toggle(2)}>
+						<MDBBtn color="primary" onClick={this.toggle(2)}>
 							Registrarme
 						</MDBBtn>
 					</MDBModalFooter>

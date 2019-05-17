@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import Carousel from "./views/home";
-import FormsPage from "./views/createAccount";
+import FormSignUp from "./views/signUp";
 
 import injectContext from "./store/appContext";
 
@@ -23,7 +23,7 @@ export class Layout extends React.Component {
 						<Navbar />
 						<Switch>
 							<Route exact path="/" component={Carousel} />
-							<Route path="/account" component={FormsPage} />
+							<Route path="/signup" component={FormSignUp} />
 							<Route render={() => <h1>Not found!</h1>} />
 						</Switch>
 						<Footer />

@@ -17,7 +17,7 @@ class ModalLog extends Component {
 	render() {
 		return (
 			<MDBContainer>
-				<MDBBtn rounded onClick={this.toggle(1)}>
+				<MDBBtn rounded color="primary" onClick={this.toggle(1)}>
 					Iniciar sesión
 				</MDBBtn>
 				<MDBModal isOpen={this.state.modal1} toggle={this.toggle(1)}>
@@ -39,7 +39,9 @@ class ModalLog extends Component {
 						</form>
 					</MDBModalBody>
 					<MDBModalFooter className="justify-content-center">
-						<MDBBtn onClick={this.toggle(1)}>Entrar</MDBBtn>
+						<MDBBtn color="primary" onClick={this.toggle(1)}>
+							Entrar
+						</MDBBtn>
 						<br />
 						<div className="createAccount">
 							¿No tienes cuenta?
