@@ -23,7 +23,7 @@ class FormSignUp extends React.Component {
 			value: "",
 			valid: false
 		},
-		zip: {
+		image: {
 			value: "",
 			valid: false
 		}
@@ -35,7 +35,7 @@ class FormSignUp extends React.Component {
 
 	render() {
 		return (
-			<div className="d-flex p-2 col-example">
+			<div className="d-flex justify-content-center">
 				<div>
 					<form>
 						<h4>Ingresa tus datos</h4>
@@ -112,8 +112,8 @@ class FormSignUp extends React.Component {
 							</MDBCol>
 							<MDBCol md="8">
 								<MDBInput
-									value={this.state.zip.value}
-									className={this.state.zip.valid ? "is-valid" : "is-invalid"}
+									value={this.state.image.value}
+									className={this.state.image.valid ? "is-valid" : "is-invalid"}
 									onChange={this.changeHandler}
 									type="text"
 									id="materialFormRegisterPasswordEx4"

@@ -4,6 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 
 import Carousel from "./views/home";
 import FormSignUp from "./views/signUp";
+import TableMyItems from "./views/myItems";
 
 import injectContext from "./store/appContext";
 
@@ -24,6 +25,7 @@ export class Layout extends React.Component {
 						<Switch>
 							<Route exact path="/" component={Carousel} />
 							<Route path="/signup" component={FormSignUp} />
+							<Route path="/myitems" component={TableMyItems} />
 							<Route render={() => <h1>Not found!</h1>} />
 						</Switch>
 						<Footer />
